@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kaptajnen</title>
+  <title>Wave Background Site</title>
   <style>
     * {
       margin: 0;
@@ -13,26 +13,42 @@
 
     html, body {
       height: 100%;
-      width: 100%;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #2f2f2f; /* Smoke gray */
-      color: white;
+      color: #fff;
+    }
+
+    .wave-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .wave-bg svg {
+      height: 100%;
+      width: 100%;
     }
 
     .container {
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100%;
       text-align: center;
-      padding: 20px;
+      padding: 2rem;
+      position: relative;
+      z-index: 1;
     }
 
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;
-      color: #ff4d4d; /* A soft red */
+      color: #ff4d4d;
       text-shadow: 2px 2px 6px rgba(255, 0, 0, 0.3);
     }
 
@@ -40,20 +56,50 @@
       max-width: 80%;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(255, 77, 77, 0.4); /* Red-tinted shadow */
+      box-shadow: 0 6px 20px rgba(255, 77, 77, 0.4);
       border: 4px solid rgba(255, 77, 77, 0.2);
+      margin-bottom: 40px;
       transition: transform 0.3s ease;
     }
 
     img:hover {
       transform: scale(1.03);
     }
+
+    .content {
+      max-width: 800px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Kapper Måsen</h1>
-    <img src="img/kap.png" alt="Key Centered Image" />
+
+  <!-- Wavy Background -->
+  <div class="wave-bg">
+    <svg viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#1e1e1e" fill-opacity="1" d="M0,256L80,240C160,224,320,192,480,192C640,192,800,224,960,234.7C1120,245,1280,235,1360,229.3L1440,224L1440,900L1360,900C1280,900,1120,900,960,900C800,900,640,900,480,900C320,900,160,900,80,900L0,900Z"></path>
+    </svg>
   </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Your Red-Accented Title</h1>
+    <img src="https://via.placeholder.com/600x400" alt="Key Centered Image" />
+
+    <div class="content">
+      <p>
+        This section is your space to expand on the purpose of your website. You can describe what it's about, who it's for, or what's coming soon. The modern styling and bold visuals provide a strong first impression while giving room to grow.
+      </p>
+      <p>
+        Use this area to share updates, product info, personal stories, or anything else your audience should know. You can also add buttons, links, or even animations later on.
+      </p>
+    </div>
+  </div>
+
 </body>
 </html>
